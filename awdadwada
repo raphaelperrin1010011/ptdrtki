@@ -1,0 +1,14 @@
+int	ft_cd(t_data *data)
+{
+	char	cwd[1025];
+	char	*str;
+
+	str = ft_strdup(getcwd(cwd, sizeof(cwd)));
+	if (data->maxindex != 0)
+		return (0);
+	if (data->str[1] == 0)
+		data->str[1] = "/Users/muteza";
+	chdir(data->str[1]);
+	data->save_builtin = getcwd(cwd, sizeof(cwd));
+	return (0);
+}
